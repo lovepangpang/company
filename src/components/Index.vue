@@ -1,15 +1,10 @@
 <template>
   <div>
     <div class="head-banner" >
-      <div class="child">
-        <p class="name" >宇倩玫瑰</p>
-        <p class="come" >Welcome！</p>
-      </div>
       <img :src="banner1" alt="图片">
     </div>
     <template>
       <swiper :options="swiperOption" ref="mySwiper">
-        <!-- slides -->
         <swiper-slide :key="index" v-for="(item, index) in slides"><img :src="item"></swiper-slide>
       </swiper>
     </template>
@@ -21,7 +16,6 @@
         <li><img :src="category3"><p>颗粒绒</p></li>
         <li><img :src="category4"><p>羽绒拼接</p></li>
       </ul>
-
     </div>
     <article class="story" >
         <p class="story-title" >品牌故事</p>
@@ -40,11 +34,14 @@
         <p class="shop-title" >门店展示</p>
         <img :key="index" v-for=" (item, index) in shops" :src="item">
     </article>
+    
   </div> 
 </template>
 
 <script>
-import 'swiper/dist/css/swiper.css'
+// import 'swiper/css/swiper.css'
+// If you use Swiper 6.0.0 or higher
+import 'swiper/swiper-bundle.css'
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
@@ -95,7 +92,6 @@ export default {
         display: block;
       }
       width: 100%;
-      margin-top: 40px;
       display: block;
       position: relative;
       .child {
